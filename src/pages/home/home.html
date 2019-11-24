@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Url Shorten
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <input type="text" placeholder="enter long url" [(ngModel)]="longUrl">
+  <button ion-button (click)="shorten()" >Shorten</button>
+  <div class="card">
+    <h3>Short url</h3>
+    <h4>{{shortUrl}} </h4>
+  </div>
+</ion-content>
