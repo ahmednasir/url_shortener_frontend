@@ -1,16 +1,28 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Url Shorten
+      Short URL
     </ion-title>
+    <button (click)='setBaseURL()' >Set URL</button>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <input type="text" placeholder="enter long url" [(ngModel)]="longUrl">
-  <button ion-button (click)="shorten()" >Shorten</button>
-  <div class="card">
-    <h3>Short url</h3>
-    <h4>{{shortUrl}} </h4>
+  <input
+    type="text"
+    class="form-control"
+    id="usr"
+    placeholder="Enter long url"
+    [(ngModel)]="longUrl"
+  />
+
+  <br />
+  <div>
+      <button ion-button (click)="shorten()" class="btn btn-primary">Shorten</button>
+  </div>
+  
+  <div class="short-url">
+    <h3>Short URL</h3>
+    <h4>{{ shortUrl }}</h4>
   </div>
 </ion-content>

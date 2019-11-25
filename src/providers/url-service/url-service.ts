@@ -10,7 +10,12 @@ export class UrlServiceProvider {
   }
 
   shortenUrl(longUrl): Observable<any>{
-    let url = "http://192.168.1.3:5000/api/url/shorten";
+    let url = localStorage.getItem('baseUrl');
+    if(!url){
+      url = "http://15.206.166.177:3000/api/url/shorten"
+    }else{
+      url = url+"/api/url/shorten"
+    }
     let body = {
       longUrl: longUrl
     }
