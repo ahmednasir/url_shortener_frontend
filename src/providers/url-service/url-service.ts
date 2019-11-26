@@ -9,13 +9,14 @@ export class UrlServiceProvider {
     console.log('Hello UrlServiceProvider Provider');
   }
 
-  shortenUrl(longUrl): Observable<any>{
-    let url = localStorage.getItem('baseUrl');
-    if(!url){
-      url = "http://15.206.166.177:3000/api/url/shorten"
-    }else{
-      url = url+"/api/url/shorten"
+  shortenUrl(longUrl): Observable<any> {
+    let baseUrl = localStorage.getItem('baseUrl');
+
+    if (!baseUrl) {
+      baseUrl = "http://15.206.166.177:3000"
     }
+
+    let url = baseUrl + "/api/url/shorten";
     let body = {
       longUrl: longUrl
     }
@@ -26,7 +27,7 @@ export class UrlServiceProvider {
       headers: headers,
       observe: "response"
     })
-    
+
   }
 
 }

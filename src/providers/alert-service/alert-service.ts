@@ -6,9 +6,9 @@ import { AlertController } from 'ionic-angular';
 @Injectable()
 export class AlertServiceProvider {
 
-  constructor(public alertCtrl: AlertController) {}
+  constructor(public alertCtrl: AlertController) { }
 
-  presentAlert(message){
+  presentAlert(message) {
     let alert = this.alertCtrl.create({
       title: message,
       inputs: [
@@ -29,7 +29,7 @@ export class AlertServiceProvider {
           text: 'Set',
           handler: data => {
             console.log(data.baseUrl)
-            localStorage.setItem('baseUrl',data.baseUrl);
+            localStorage.setItem('baseUrl', data.baseUrl);
           }
         }
       ]
